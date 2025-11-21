@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at center, #0a0f1f, #000);
+    font-family: 'Segoe UI', sans-serif;
+    color: #e0e0e0;
+}
+
+h1, h2 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+a {
+    color: #4fffd2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+}
+
+/* --- HEXAGONO ESTILO ARK CON ANIMACIÓN AZUL → MORADO --- */
+
+.hex {
+    width: 230px;
+    height: 260px;
+
+    clip-path: polygon(
+        50% 0%,
+        93% 25%,
+        93% 75%,
+        50% 100%,
+        7% 75%,
+        7% 25%
+    );
+
+    background: rgba(0, 140, 255, 0.10); /* azul inicial */
+    border: 2px solid #009dff;
+
+    box-shadow:
+        0 0 15px rgba(0, 157, 255, 0.6),
+        inset 0 0 12px rgba(0, 157, 255, 0.3);
+
+    backdrop-filter: blur(6px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.35s ease-out;
+    position: relative;
+
+    /* Animación completa */
+    animation: hexPulse 4s infinite ease-in-out;
+}
+
+/* Brillo interno animado */
+.hex::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    clip-path: inherit;
+    background: rgba(200, 0, 255, 0.14);
+    filter: blur(18px);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+/* Hover (máximo poder) */
+.hex:hover {
+    transform: translateY(-12px) scale(1.12);
+    border-color: #d900ff;
+    box-shadow:
+        0 0 35px rgba(217, 0, 255, 0.9),
+        inset 0 0 20px rgba(217, 0, 255, 0.5);
+}
+
+.hex:hover::before {
+    opacity: 1;
+}
+
+.hex h3 {
+    margin-bottom: 10px;
+    text-shadow: 0 0 12px #009dff;
+}
+
+.hex a {
+    margin-top: 10px;
+}
+
+/* --- ANIMACIÓN PRINCIPAL --- */
+
+@keyframes hexPulse {
+    0% {
+        transform: scale(1);
+        border-color: #009dff;
+        box-shadow:
+            0 0 15px rgba(0, 157, 255, 0.6),
+            inset 0 0 12px rgba(0, 157, 255, 0.3);
+        background: rgba(0, 140, 255, 0.10);
+    }
+
+    50% {
+        transform: scale(1.08);
+        border-color: #c300ff;
+        box-shadow:
+            0 0 30px rgba(195, 0, 255, 0.85),
+            inset 0 0 18px rgba(195, 0, 255, 0.5);
+        background: rgba(195, 0, 255, 0.14); /* magenta */
+    }
+
+    100% {
+        transform: scale(1);
+        border-color: #009dff;
+        box-shadow:
+            0 0 15px rgba(0, 157, 255, 0.6),
+            inset 0 0 12px rgba(0, 157, 255, 0.3);
+        background: rgba(0, 140, 255, 0.10);
+    }
+}
