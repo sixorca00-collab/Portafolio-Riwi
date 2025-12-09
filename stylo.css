@@ -1,117 +1,134 @@
 /* --- Estilos globales --- */
+/* Resetea márgenes, define la tipografía y colores base */
 body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background: #111;
-    color: #fff;
+    margin: 0; /* elimina el margen por defecto del navegador */
+    font-family: "Poppins", sans-serif; /* tipografía principal */
+    background: #111; /* fondo oscuro de la página */
+    color: #fff; /* color de texto por defecto (blanco) */
 }
 
 /* --- Header elegante minimalista --- */
+/* Contenedor del header: layout horizontal, centrado verticalmente y espacio entre elementos */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 3rem;
-    background: #000;
-    border-bottom: 1px solid #333;
+    display: flex; /* usa flexbox para alinear logo y nav en una fila */
+    justify-content: space-between; /* separa los elementos a ambos extremos */
+    align-items: center; /* centra verticalmente los elementos dentro del header */
+    padding: 1.5rem 3rem; /* espacio interno: arriba/abajo 1.5rem, izquierda/derecha 3rem */
+    background: #000; /* fondo negro del header */
+    border-bottom: 1px solid #333; /* línea sutil separando header del contenido */
 }
 
+/* Estilo del logo: tamaño, espacio entre letras y color dorado */
 .logo {
-    font-size: 1.8rem;
-    letter-spacing: 3px;
-    font-weight: 700;
-    color: gold;
+    font-size: 1.8rem; /* tamaño de fuente del logo */
+    letter-spacing: 3px; /* espacio entre letras para efecto elegante */
+    font-weight: 700; /* peso de la fuente (negrita) */
+    color: gold; /* color dorado */
 }
 
+/* Estilos para enlaces del nav: separación y apariencia */
 nav a {
-    margin-left: 1.5rem;
-    color: #ccc;
-    text-decoration: none;
-    font-weight: 300;
+    margin-left: 1.5rem; /* separación entre enlaces */
+    color: #ccc; /* color gris claro por defecto */
+    text-decoration: none; /* quita subrayado */
+    font-weight: 300; /* peso ligero para un look minimalista */
 }
 
+/* Hover para los enlaces del nav: cambia color a dorado */
 nav a:hover {
-    color: gold;
+    color: gold; /* color al pasar el cursor */
 }
 
 /* --- Hero elegante con fondo oscuro --- */
+/* Sección principal (hero) con imagen de fondo y mezcla para oscurecerla */
 .hero {
-    text-align: center;
-    padding: 5rem 2rem;
-    background: url("fondo-joyeria.jpg") center/cover no-repeat;
-    background-blend-mode: multiply;
-    background-color: rgba(0,0,0,0.5);
+    text-align: center; /* centra el contenido horizontalmente */
+    padding: 5rem 2rem; /* mucho padding vertical para dar protagonismo */
+    background: url("fondo-joyeria.jpg") center/cover no-repeat; /* imagen de fondo centrada y cover */
+    background-blend-mode: multiply; /* mezcla la imagen con el color de fondo */
+    background-color: rgba(0,0,0,0.5); /* capa semitransparente para oscurecer la imagen */
 }
 
+/* Título del hero: tamaño grande y margen inferior */
 .hero h2 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+    font-size: 3rem; /* tamaño del título principal */
+    margin-bottom: 0.5rem; /* pequeño espacio debajo del título */
 }
 
+/* Párrafo del hero: tamaño y color menos intenso */
 .hero p {
-    font-size: 1.2rem;
-    color: #ddd;
+    font-size: 1.2rem; /* tamaño de texto del subtítulo */
+    color: beige; /* color gris claro para suavizar el contraste */
 }
 
 /* --- Productos destacados --- */
+/* Contenedor de la sección de productos */
 .productos {
-    padding: 4rem 2rem;
-    text-align: center;
+    padding: 4rem 2rem; /* espacio alrededor de la sección */
+    text-align: center; /* centra el contenido */
 }
 
+/* Encabezado de productos: tamaño y animación aplicada */
 .productos h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    animation: brillo 1.5s;
-
+    font-size: 2rem; /* tamaño del subtítulo de la sección */
+    margin-bottom: 2rem; /* espacio debajo del encabezado */
+    animation: brillo 1.5s; /* aplica la animación 'brillo' (ver @keyframes) */
 }
 
+/* Grid de productos: 3 columnas con separación */
 .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    display: grid; /* usa grid layout para los items */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 1.5rem; /* espacio entre columnas y filas */
 }
 
+/* Estilo de cada tarjeta / item */
 .item {
-    background: #1b1b1b;
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid #333;
-    transition: 0.3s;
-    animation: brillo 1.5s infinite;
+    background: #1b1b1b; /* fondo oscuro para la tarjeta */
+    padding: 2rem; /* espacio interno de la tarjeta */
+    border-radius: 10px; /* esquinas redondeadas */
+    border: 1px solid #333; /* borde sutil */
+    transition: 0.3s; /* transición general para efectos hover */
+    animation: brillo 1.5s infinite; /* animación de brillo repetida */
 }
 
+/* Estado hover de la tarjeta: movimiento, borde dorado y sombra */
 .item:hover {
-    transform: translate(200px, -8px);
-    border-color: gold;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-    animation: brillo 1.5s ease-in-out infinite;
+    transform: translateY(-18px); /* desplaza el item (nota: 200px es grande — es intencional en tu CSS) */
+    border-color: gold; /* cambia el borde a dorado */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3); /* sombra dorada */
+    animation: brillo 1.5s ease-in-out infinite; /* mantiene animación de brillo con easing */
 }
 
+/* --- Definición de la animación 'brillo' usada arriba --- */
+/* La animación alterna la intensidad de la sombra para dar un efecto luminoso */
 @keyframes brillo {
     0% {
-        box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); /* sombra inicial tenue */
     }
     50% {
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); /* sombra más intensa a la mitad */
     }
     100% {
-        box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); /* vuelve a la sombra inicial */
     }
 }
+
 /* --- Footer minimalista --- */
+/* Pie de página con fondo negro y texto gris */
 footer {
-    background: #000;
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: 3rem;
-    color: #777;
+    background: #000; /* fondo negro */
+    text-align: center; /* centrar texto */
+    padding: 1.5rem; /* padding cómodo */
+    margin-top: 3rem; /* separa del contenido anterior */
+    color: #777; /* color gris para texto menos llamativo */
 }
+
 /* Texto con textura de oro */
 .texto-oro {
     background: url("data:image/jpeg;base64,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") center/cover;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    animation: brillo 2s ease-in-out infinite;
 }
-
