@@ -136,3 +136,18 @@ a {
         background: rgba(0, 140, 255, 0.10);
     }
 }
+.btn-ir{
+    background-color: #4fffd2;
+    height: 2rem;
+    width: 4rem;
+    border-radius: 3rem;
+    padding: 10 auto;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+.btn-ir:hover{
+    background-color: #c300ff;
+    transform: scale(1.3);
+
+}
